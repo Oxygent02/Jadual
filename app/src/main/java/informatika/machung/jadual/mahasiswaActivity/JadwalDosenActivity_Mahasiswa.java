@@ -1,4 +1,4 @@
-package informatika.machung.jadual.mahasiswa;
+package informatika.machung.jadual.mahasiswaActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
@@ -20,9 +17,9 @@ import java.util.Date;
 import java.util.Locale;
 
 import informatika.machung.jadual.R;
-import informatika.machung.jadual.mahasiswa.listEvent.DataEvent;
-import informatika.machung.jadual.mahasiswa.listEvent.Event;
-import informatika.machung.jadual.mahasiswa.listEvent.ListEventAdapter;
+import informatika.machung.jadual.Data.ListEvent.DataEvent;
+import informatika.machung.jadual.Data.ListEvent.Event;
+import informatika.machung.jadual.Data.ListEvent.ListEventAdapter;
 
 public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
 
@@ -41,7 +38,6 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
 
         setupEnvirontment();
         initializeEventList();
-
     }
 
     @Override

@@ -9,6 +9,7 @@
         style="@style/CircleImage"
         android:src="@drawable/ic_bookmark"
         android:id="@+id/img_item_photo"
+        android:layout_gravity="center_vertical"
         android:layout_marginRight="@dimen/fab_margin"/>
 
     <LinearLayout

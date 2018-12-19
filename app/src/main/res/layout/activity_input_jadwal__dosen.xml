@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".dosenActivity.InputJadwalActivity_Dosen">
+
+    <EditText
+        android:id="@+id/edt_date_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/edt_start_time"
+        android:hint="Start Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/edt_end_time"
+        android:hint="End Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/edt_event_name"
+        android:hint="Event Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/edt_event_msg"
+        android:hint="Message (optional)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"/>
+
+</LinearLayout>

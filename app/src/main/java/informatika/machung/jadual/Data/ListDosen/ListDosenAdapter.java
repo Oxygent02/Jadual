@@ -1,4 +1,4 @@
-package informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa;
+package informatika.machung.jadual.Data.ListDosen;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

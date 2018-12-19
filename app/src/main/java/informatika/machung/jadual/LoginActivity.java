@@ -1,15 +1,14 @@
 package informatika.machung.jadual;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import informatika.machung.jadual.dosen.MainActivity_Dosen;
-import informatika.machung.jadual.mahasiswa.MainActivity_Mahasiswa;
+import informatika.machung.jadual.dosenActivity.MainActivity_Dosen;
+import informatika.machung.jadual.mahasiswaActivity.MainActivity_Mahasiswa;
 
 public class LoginActivity extends AppCompatActivity {
 

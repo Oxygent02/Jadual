@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,12 +19,15 @@
             </intent-filter>
         </activity>
 
-        <!--MAHASISWA-->
-        <activity android:name=".mahasiswa.MainActivity_Mahasiswa" android:label="Jadwal Dosen"/>
-        <activity android:name=".mahasiswa.JadwalDosenActivity_Mahasiswa"></activity>
+        <!-- MAHASISWA -->
+        <activity
+            android:name=".mahasiswaActivity.MainActivity_Mahasiswa"
+            android:label="Jadwal Dosen" />
+        <activity android:name=".mahasiswaActivity.JadwalDosenActivity_Mahasiswa" />
 
-        <!--DOSEN-->
-        <activity android:name=".dosen.MainActivity_Dosen" />
+        <!-- DOSEN -->
+        <activity android:name=".dosenActivity.MainActivity_Dosen" />
+        <activity android:name=".dosenActivity.InputJadwalActivity_Dosen"></activity>
     </application>
 
 </manifest>

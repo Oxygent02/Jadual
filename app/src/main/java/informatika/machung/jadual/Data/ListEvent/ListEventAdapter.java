@@ -1,14 +1,12 @@
-package informatika.machung.jadual.mahasiswa.listEvent;
+package informatika.machung.jadual.Data.ListEvent;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -41,8 +39,13 @@ public class ListEventAdapter extends RecyclerView.Adapter<ListEventAdapter.Cate
 
         holder.eventName.setText(getListEvent().get(position).getEvent_name());
         holder.eventTime.setText(getListEvent().get(position).getEvent_time());
-        holder.eventDesc.setText(getListEvent().get(position).getEvent_desc());
+        holder.eventDesc.setText("\"" +getListEvent().get(position).getEvent_desc() + "\"");
+        holder.eventDesc.setTypeface(null, Typeface.ITALIC);
 
+        //check if desc null
+        if (holder.eventDesc.getText().equals("\"\"")){
+            holder.eventDesc.setVisibility(View.GONE);
+        }
     }
 
     @Override

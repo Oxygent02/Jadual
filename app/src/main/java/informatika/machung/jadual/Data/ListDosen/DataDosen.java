@@ -1,8 +1,6 @@
-package informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa;
+package informatika.machung.jadual.Data.ListDosen;
 
 import java.util.ArrayList;
-
-import informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa.Dosen;
 
 public class DataDosen {
 

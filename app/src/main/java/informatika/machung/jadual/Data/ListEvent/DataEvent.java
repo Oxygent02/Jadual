@@ -1,4 +1,4 @@
-package informatika.machung.jadual.mahasiswa.listEvent;
+package informatika.machung.jadual.Data.ListEvent;
 
 import java.util.ArrayList;
 

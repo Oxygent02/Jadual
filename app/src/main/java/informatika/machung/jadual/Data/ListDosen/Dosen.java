@@ -1,4 +1,4 @@
-package informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa;
+package informatika.machung.jadual.Data.ListDosen;
 
 public class Dosen {
 

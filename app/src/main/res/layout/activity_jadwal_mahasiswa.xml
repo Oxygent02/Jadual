@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".mahasiswa.JadwalDosenActivity_Mahasiswa"
+    tools:context=".mahasiswaActivity.JadwalDosenActivity_Mahasiswa"
     android:weightSum="2">
 
     <com.github.sundeepk.compactcalendarview.CompactCalendarView
@@ -36,14 +36,5 @@
             android:layout_height="match_parent"/>
 
     </ScrollView>
-
-    <!--<android.support.design.widget.FloatingActionButton-->
-        <!--android:id="@+id/fab"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="end|bottom"-->
-        <!--app:backgroundTint="@color/colorPrimaryDark"-->
-        <!--android:src="@drawable/ic_add"-->
-        <!--android:layout_margin="16dp" />-->
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package informatika.machung.jadual.mahasiswa;
+package informatika.machung.jadual.mahasiswaActivity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,10 +10,10 @@ import android.view.View;
 import java.util.ArrayList;
 
 import informatika.machung.jadual.R;
-import informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa.Dosen;
+import informatika.machung.jadual.Data.ListDosen.Dosen;
 import informatika.machung.jadual.util.ItemClickSupport;
-import informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa.ListDosenAdapter;
-import informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa.DataDosen;
+import informatika.machung.jadual.Data.ListDosen.ListDosenAdapter;
+import informatika.machung.jadual.Data.ListDosen.DataDosen;
 
 public class MainActivity_Mahasiswa extends AppCompatActivity {
 
