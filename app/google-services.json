@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1067232656780",
+    "firebase_url": "https://uasweb-mobile.firebaseio.com",
+    "project_id": "uasweb-mobile",
+    "storage_bucket": "uasweb-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067232656780:android:caf6d9d55adf5056",
+        "android_client_info": {
+          "package_name": "informatika.machung.jadual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067232656780-o46tp4geiqv8p20c45vr1t74psdcilrp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCksfJ2KdT_w_H17OEGj3Pqnrce8mHlL8Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
