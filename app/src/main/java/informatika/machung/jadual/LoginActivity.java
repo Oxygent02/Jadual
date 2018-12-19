@@ -1,5 +1,6 @@
 package informatika.machung.jadual;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
@@ -16,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import informatika.machung.jadual.dosen.MainActivity_Dosen;
+import informatika.machung.jadual.dosenActivity.MainActivity_Dosen;
 import informatika.machung.jadual.mahasiswa.MainActivity_Mahasiswa;
 import informatika.machung.jadual.model.Person;
 
@@ -29,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     String auth="";
     Person person;
 
+    SharedPreferences sharedPref = getSharedPreferences(
+            "session", Context.MODE_PRIVATE);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
         editUsername = findViewById(R.id.edt_username);
         editPassword = findViewById(R.id.edt_password);
+
     }
 
     public void click_login(View view) {
@@ -49,6 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         }
         else {
             checkUn(editUsername.getText().toString(),editPassword.getText().toString());
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("username", editUsername.getText().toString());
+            editor.commit();
         }
 
 //            String checkUser = editUsername.getText().toString();
