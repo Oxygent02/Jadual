@@ -1,6 +1,6 @@
 package informatika.machung.jadual.Data.ListEvent;
 
-public class Event {
+public class EventModel {
 
     private String event_name;
     private String event_time;

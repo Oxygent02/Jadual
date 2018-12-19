@@ -14,14 +14,14 @@ import informatika.machung.jadual.R;
 
 public class ListEventAdapter extends RecyclerView.Adapter<ListEventAdapter.CategoryViewHolder>{
     private Context context;
-    private ArrayList<Event> listEvent;
+    private ArrayList<EventModel> listEventModel;
 
-    public ArrayList<Event> getListEvent() {
-        return listEvent;
+    public ArrayList<EventModel> getListEventModel() {
+        return listEventModel;
     }
 
-    public void setListEvent(ArrayList<Event> listEvent) {
-        this.listEvent = listEvent;
+    public void setListEventModel(ArrayList<EventModel> listEventModel) {
+        this.listEventModel = listEventModel;
     }
 
     public ListEventAdapter(Context context) {
@@ -37,9 +37,9 @@ public class ListEventAdapter extends RecyclerView.Adapter<ListEventAdapter.Cate
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
 
-        holder.eventName.setText(getListEvent().get(position).getEvent_name());
-        holder.eventTime.setText(getListEvent().get(position).getEvent_time());
-        holder.eventDesc.setText("\"" +getListEvent().get(position).getEvent_desc() + "\"");
+        holder.eventName.setText(getListEventModel().get(position).getEvent_name());
+        holder.eventTime.setText(getListEventModel().get(position).getEvent_time());
+        holder.eventDesc.setText("\"" + getListEventModel().get(position).getEvent_desc() + "\"");
         holder.eventDesc.setTypeface(null, Typeface.ITALIC);
 
         //check if desc null
@@ -50,7 +50,7 @@ public class ListEventAdapter extends RecyclerView.Adapter<ListEventAdapter.Cate
 
     @Override
     public int getItemCount() {
-        return getListEvent().size();
+        return getListEventModel().size();
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder{

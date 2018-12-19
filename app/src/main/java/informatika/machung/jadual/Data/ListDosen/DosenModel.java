@@ -1,6 +1,6 @@
 package informatika.machung.jadual.Data.ListDosen;
 
-public class Dosen {
+public class DosenModel {
 
     private String name, remarks, photo, description;
 

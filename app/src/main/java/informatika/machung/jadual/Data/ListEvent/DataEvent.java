@@ -37,16 +37,16 @@ public class DataEvent {
 
         };
 
-        public static ArrayList<Event> getListData(){
-            Event event = null;
-            ArrayList<Event> list = new ArrayList<>();
+        public static ArrayList<EventModel> getListData(){
+            EventModel eventModel = null;
+            ArrayList<EventModel> list = new ArrayList<>();
             for (int i = 0; i <data.length; i++) {
-                event = new Event();
-                event.setEvent_time(data[i][0]);
-                event.setEvent_name(data[i][1]);
-                event.setEvent_desc(data[i][2]);
+                eventModel = new EventModel();
+                eventModel.setEvent_time(data[i][0]);
+                eventModel.setEvent_name(data[i][1]);
+                eventModel.setEvent_desc(data[i][2]);
 
-                list.add(event);
+                list.add(eventModel);
             }
 
             return list;

@@ -57,17 +57,17 @@ public class DataDosen {
 
         };
 
-        public static ArrayList<Dosen> getListData(){
-            Dosen dosen = null;
-            ArrayList<Dosen> list = new ArrayList<>();
+        public static ArrayList<DosenModel> getListData(){
+            DosenModel dosenModel = null;
+            ArrayList<DosenModel> list = new ArrayList<>();
             for (int i = 0; i <data.length; i++) {
-                dosen = new Dosen();
-                dosen.setName(data[i][0]);
-                dosen.setRemarks(data[i][1]);
-                dosen.setPhoto(data[i][2]);
-                dosen.setDescription(data[i][3]);
+                dosenModel = new DosenModel();
+                dosenModel.setName(data[i][0]);
+                dosenModel.setRemarks(data[i][1]);
+                dosenModel.setPhoto(data[i][2]);
+                dosenModel.setDescription(data[i][3]);
 
-                list.add(dosen);
+                list.add(dosenModel);
             }
 
             return list;

@@ -1,7 +1,9 @@
 package informatika.machung.jadual.dosenActivity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import informatika.machung.jadual.R;
@@ -31,5 +33,14 @@ public class InputJadwalActivity_Dosen extends AppCompatActivity {
 
         inputDate.setEnabled(false);
         inputDate.setText(date_chosen);
+    }
+
+    //button
+    public void click_save(View view) {
+        Intent toInput = new Intent(InputJadwalActivity_Dosen.this , MainActivity_Dosen.class);
+
+        //code here for save method
+
+        startActivity(toInput);
     }
 }

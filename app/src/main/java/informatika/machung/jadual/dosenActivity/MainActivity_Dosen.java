@@ -22,11 +22,9 @@ import java.util.Date;
 import java.util.Locale;
 
 import informatika.machung.jadual.Data.ListEvent.DataEvent;
-import informatika.machung.jadual.Data.ListEvent.Event;
+import informatika.machung.jadual.Data.ListEvent.EventModel;
 import informatika.machung.jadual.Data.ListEvent.ListEventAdapter;
 import informatika.machung.jadual.R;
-import informatika.machung.jadual.mahasiswaActivity.JadwalDosenActivity_Mahasiswa;
-import informatika.machung.jadual.mahasiswaActivity.MainActivity_Mahasiswa;
 
 public class MainActivity_Dosen extends AppCompatActivity {
 
@@ -36,7 +34,7 @@ public class MainActivity_Dosen extends AppCompatActivity {
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
 
     private RecyclerView rvEvent;
-    private ArrayList<Event> arrEvent;
+    private ArrayList<EventModel> arrEventModel;
 
     public static String PASS_DATE;
 
@@ -46,7 +44,7 @@ public class MainActivity_Dosen extends AppCompatActivity {
         setContentView(R.layout.activity_main_dosen);
         initElement();
 
-        SetuptNavDrawer();
+        SetupNavDrawer();
         SetupActionbar();
 
         setupCalendar();
@@ -64,6 +62,8 @@ public class MainActivity_Dosen extends AppCompatActivity {
                 Context context = getApplicationContext();
                 PASS_DATE = dateClicked.toString();
                 Toast.makeText(context, dateClicked.toString() , Toast.LENGTH_SHORT).show();
+
+                initializeEventList();
             }
 
             @Override
@@ -80,8 +80,8 @@ public class MainActivity_Dosen extends AppCompatActivity {
         rvEvent = findViewById(R.id.rv_list_event);
         rvEvent.setHasFixedSize(true);
 
-        arrEvent = new ArrayList<>();
-        arrEvent.addAll(DataEvent.getListData());
+        arrEventModel = new ArrayList<>();
+        arrEventModel.addAll(DataEvent.getListData());
 
         showRecyclerList();
     }
@@ -90,7 +90,7 @@ public class MainActivity_Dosen extends AppCompatActivity {
     private void showRecyclerList(){
         rvEvent.setLayoutManager(new LinearLayoutManager(this));
         ListEventAdapter listEventAdapter = new ListEventAdapter(this);
-        listEventAdapter.setListEvent(arrEvent);
+        listEventAdapter.setListEventModel(arrEventModel);
         rvEvent.setAdapter(listEventAdapter);
     }
 
@@ -108,7 +108,7 @@ public class MainActivity_Dosen extends AppCompatActivity {
     }
 
     private void initElement(){
-        mDrawerLayout = findViewById(R.id.drawer_layout);
+        mDrawerLayout = findViewById(R.id.drawer_layout_dosen);
 
         //Default time is now
         Date c = Calendar.getInstance().getTime();
@@ -119,7 +119,7 @@ public class MainActivity_Dosen extends AppCompatActivity {
 
     }
 
-    private void SetuptNavDrawer(){
+    private void SetupNavDrawer(){
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -153,8 +153,11 @@ public class MainActivity_Dosen extends AppCompatActivity {
 
     //Float Action Button
     public void click_input(View view) {
-        Intent openDesc = new Intent(MainActivity_Dosen.this , InputJadwalActivity_Dosen.class);
-        openDesc.putExtra(InputJadwalActivity_Dosen.DATE, PASS_DATE);
-        startActivity(openDesc);
+        Intent toInput = new Intent(MainActivity_Dosen.this , InputJadwalActivity_Dosen.class);
+        toInput.putExtra(InputJadwalActivity_Dosen.DATE, PASS_DATE);
+
+
+
+        startActivity(toInput);
     }
 }

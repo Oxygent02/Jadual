@@ -8,10 +8,17 @@
     android:orientation="vertical"
     android:gravity="bottom">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_photo"
+        style="@style/CircleImage"
+        android:src="@drawable/dosen_hendry"
+        android:layout_marginBottom="@dimen/fab_margin"/>
+
     <TextView
+        android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My header title"
+        android:text="Nama Dosen"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 </LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_status_1"
+            android:icon="@drawable/ic_online"
+            android:title="In Room" />
+        <item
+            android:id="@+id/nav_status_2"
+            android:icon="@drawable/ic_away"
+            android:title="Having a Break" />
+
+        <item
+            android:id="@+id/nav_status_3"
+            android:icon="@drawable/ic_offline"
+            android:title="Not Available" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_settings_power"
+            android:title="Logout" />
+
+    </group>
+</menu>

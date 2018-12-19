@@ -16,14 +16,14 @@ import informatika.machung.jadual.R;
 
 public class ListDosenAdapter extends RecyclerView.Adapter<ListDosenAdapter.CategoryViewHolder>{
     private Context context;
-    private ArrayList<Dosen> listDosen;
+    private ArrayList<DosenModel> listDosenModel;
 
-    public ArrayList<Dosen> getListDosen() {
-        return listDosen;
+    public ArrayList<DosenModel> getListDosenModel() {
+        return listDosenModel;
     }
 
-    public void setListDosen(ArrayList<Dosen> listDosen) {
-        this.listDosen = listDosen;
+    public void setListDosenModel(ArrayList<DosenModel> listDosenModel) {
+        this.listDosenModel = listDosenModel;
     }
 
     public ListDosenAdapter(Context context) {
@@ -39,11 +39,11 @@ public class ListDosenAdapter extends RecyclerView.Adapter<ListDosenAdapter.Cate
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
 
-        holder.tvName.setText(getListDosen().get(position).getName());
-        holder.tvRemarks.setText(getListDosen().get(position).getRemarks());
+        holder.tvName.setText(getListDosenModel().get(position).getName());
+        holder.tvRemarks.setText(getListDosenModel().get(position).getRemarks());
 
         Glide.with(context)
-                .load(getListDosen().get(position).getPhoto())
+                .load(getListDosenModel().get(position).getPhoto())
                 .override(55, 55)
                 .crossFade()
                 .into(holder.imgPhoto);
@@ -51,7 +51,7 @@ public class ListDosenAdapter extends RecyclerView.Adapter<ListDosenAdapter.Cate
 
     @Override
     public int getItemCount() {
-        return getListDosen().size();
+        return getListDosenModel().size();
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder{
@@ -64,7 +64,6 @@ public class ListDosenAdapter extends RecyclerView.Adapter<ListDosenAdapter.Cate
             tvName = (TextView)itemView.findViewById(R.id.tv_item_name);
             tvRemarks = (TextView)itemView.findViewById(R.id.tv_item_remarks);
             imgPhoto = (ImageView)itemView.findViewById(R.id.img_item_photo);
-
         }
     }
 }

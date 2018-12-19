@@ -18,7 +18,7 @@ import java.util.Locale;
 
 import informatika.machung.jadual.R;
 import informatika.machung.jadual.Data.ListEvent.DataEvent;
-import informatika.machung.jadual.Data.ListEvent.Event;
+import informatika.machung.jadual.Data.ListEvent.EventModel;
 import informatika.machung.jadual.Data.ListEvent.ListEventAdapter;
 
 public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
@@ -29,7 +29,7 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
 
     private RecyclerView rvEvent;
-    private ArrayList<Event> arrEvent;
+    private ArrayList<EventModel> arrEventModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +63,8 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
         rvEvent = findViewById(R.id.rv_list_event);
         rvEvent.setHasFixedSize(true);
 
-        arrEvent = new ArrayList<>();
-        arrEvent.addAll(DataEvent.getListData());
+        arrEventModel = new ArrayList<>();
+        arrEventModel.addAll(DataEvent.getListData());
 
         showRecyclerList();
     }
@@ -73,7 +73,7 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
     private void showRecyclerList(){
         rvEvent.setLayoutManager(new LinearLayoutManager(this));
         ListEventAdapter listEventAdapter = new ListEventAdapter(this);
-        listEventAdapter.setListEvent(arrEvent);
+        listEventAdapter.setListEventModel(arrEventModel);
         rvEvent.setAdapter(listEventAdapter);
     }
 
@@ -104,6 +104,8 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
             public void onDayClick(Date dateClicked) {
                 Context context = getApplicationContext();
                 Toast.makeText(context, dateClicked.toString() , Toast.LENGTH_SHORT).show();
+
+                initializeEventList();
             }
 
             @Override
