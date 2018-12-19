@@ -16,14 +16,14 @@ import informatika.machung.jadual.R;
 
 public class ListEventAdapter extends RecyclerView.Adapter<ListEventAdapter.CategoryViewHolder>{
     private Context context;
-    private ArrayList<Event> listDosen;
+    private ArrayList<Event> listEvent;
 
-    public ArrayList<Event> getListWarna() {
-        return listDosen;
+    public ArrayList<Event> getListEvent() {
+        return listEvent;
     }
 
-    public void setListWarna(ArrayList<Event> listWarna) {
-        this.listDosen = listWarna;
+    public void setListEvent(ArrayList<Event> listEvent) {
+        this.listEvent = listEvent;
     }
 
     public ListEventAdapter(Context context) {
@@ -32,39 +32,34 @@ public class ListEventAdapter extends RecyclerView.Adapter<ListEventAdapter.Cate
 
     @Override
     public CategoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_dosen, parent, false);
+        View itemRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_event, parent, false);
         return new CategoryViewHolder(itemRow);
     }
 
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
 
-        holder.tvName.setText(getListWarna().get(position).getName());
-        holder.tvRemarks.setText(getListWarna().get(position).getRemarks());
+        holder.eventName.setText(getListEvent().get(position).getEvent_name());
+        holder.eventTime.setText(getListEvent().get(position).getEvent_time());
+        holder.eventDesc.setText(getListEvent().get(position).getEvent_desc());
 
-        Glide.with(context)
-                .load(getListWarna().get(position).getPhoto())
-                .override(55, 55)
-                .crossFade()
-                .into(holder.imgPhoto);
     }
 
     @Override
     public int getItemCount() {
-        return getListWarna().size();
+        return getListEvent().size();
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder{
-        TextView tvName;
-        TextView tvRemarks;
-        ImageView imgPhoto;
+        TextView eventName;
+        TextView eventTime;
+        TextView eventDesc;
 
         public CategoryViewHolder(View itemView) {
             super(itemView);
-            tvName = (TextView)itemView.findViewById(R.id.tv_item_name);
-            tvRemarks = (TextView)itemView.findViewById(R.id.tv_item_remarks);
-            imgPhoto = (ImageView)itemView.findViewById(R.id.img_item_photo);
-
+            eventName = itemView.findViewById(R.id.tv_event_name);
+            eventTime = itemView.findViewById(R.id.tv_event_time);
+            eventDesc = itemView.findViewById(R.id.tv_event_desc);
         }
     }
 }

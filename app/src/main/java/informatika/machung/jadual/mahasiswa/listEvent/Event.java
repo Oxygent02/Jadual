@@ -2,7 +2,14 @@ package informatika.machung.jadual.mahasiswa.listEvent;
 
 public class Event {
 
-    private String event_name, event_time;
+    private String event_name;
+    private String event_time;
+
+    public String getEvent_desc() { return event_desc; }
+
+    public void setEvent_desc(String event_desc) { this.event_desc = event_desc; }
+
+    private String event_desc;
 
     public String getEvent_name() {
         return event_name;

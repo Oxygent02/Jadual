@@ -18,7 +18,7 @@ import informatika.machung.jadual.mahasiswa.listDosen_Mahasiswa.DataDosen;
 public class MainActivity_Mahasiswa extends AppCompatActivity {
 
     private RecyclerView rvDosen;
-    private ArrayList<Dosen> arr_dosen;
+    private ArrayList<Dosen> arrDosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class MainActivity_Mahasiswa extends AppCompatActivity {
         rvDosen = (RecyclerView)findViewById(R.id.rv_list_dosen);
         rvDosen.setHasFixedSize(true);
 
-        arr_dosen = new ArrayList<>();
-        arr_dosen.addAll(DataDosen.getListData());
+        arrDosen = new ArrayList<>();
+        arrDosen.addAll(DataDosen.getListData());
 
         showRecyclerList();
     }
@@ -42,14 +42,14 @@ public class MainActivity_Mahasiswa extends AppCompatActivity {
     //set Recyclerview data
     private void showRecyclerList(){
         rvDosen.setLayoutManager(new LinearLayoutManager(this));
-        ListDosenAdapter listWarnaAdapter = new ListDosenAdapter(this);
-        listWarnaAdapter.setListWarna(arr_dosen);
-        rvDosen.setAdapter(listWarnaAdapter);
+        ListDosenAdapter listDosenAdapter = new ListDosenAdapter(this);
+        listDosenAdapter.setListDosen(arrDosen);
+        rvDosen.setAdapter(listDosenAdapter);
 
         ItemClickSupport.addTo(rvDosen).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                clickSelectedDosen(arr_dosen.get(position));
+                clickSelectedDosen(arrDosen.get(position));
             }
         });
     }
@@ -58,8 +58,6 @@ public class MainActivity_Mahasiswa extends AppCompatActivity {
     private void clickSelectedDosen(Dosen dosen){
         Intent openDesc = new Intent(MainActivity_Mahasiswa.this , JadwalDosenActivity_Mahasiswa.class);
         openDesc.putExtra(JadwalDosenActivity_Mahasiswa.NAME, dosen.getName());
-//        openDesc.putExtra(JadwalDosenActivity_Mahasiswa.IMAGE, dosen.getPhoto());
-//        openDesc.putExtra(JadwalDosenActivity_Mahasiswa.DESCRIPTION, dosen.getDescription());
         startActivity(openDesc);
     }
 }

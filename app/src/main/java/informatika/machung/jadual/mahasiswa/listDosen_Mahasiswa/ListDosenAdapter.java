@@ -18,12 +18,12 @@ public class ListDosenAdapter extends RecyclerView.Adapter<ListDosenAdapter.Cate
     private Context context;
     private ArrayList<Dosen> listDosen;
 
-    public ArrayList<Dosen> getListWarna() {
+    public ArrayList<Dosen> getListDosen() {
         return listDosen;
     }
 
-    public void setListWarna(ArrayList<Dosen> listWarna) {
-        this.listDosen = listWarna;
+    public void setListDosen(ArrayList<Dosen> listDosen) {
+        this.listDosen = listDosen;
     }
 
     public ListDosenAdapter(Context context) {
@@ -39,11 +39,11 @@ public class ListDosenAdapter extends RecyclerView.Adapter<ListDosenAdapter.Cate
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
 
-        holder.tvName.setText(getListWarna().get(position).getName());
-        holder.tvRemarks.setText(getListWarna().get(position).getRemarks());
+        holder.tvName.setText(getListDosen().get(position).getName());
+        holder.tvRemarks.setText(getListDosen().get(position).getRemarks());
 
         Glide.with(context)
-                .load(getListWarna().get(position).getPhoto())
+                .load(getListDosen().get(position).getPhoto())
                 .override(55, 55)
                 .crossFade()
                 .into(holder.imgPhoto);
@@ -51,7 +51,7 @@ public class ListDosenAdapter extends RecyclerView.Adapter<ListDosenAdapter.Cate
 
     @Override
     public int getItemCount() {
-        return getListWarna().size();
+        return getListDosen().size();
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder{

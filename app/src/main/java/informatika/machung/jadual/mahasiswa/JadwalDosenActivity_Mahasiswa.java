@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,10 +15,14 @@ import android.widget.Toast;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 import informatika.machung.jadual.R;
+import informatika.machung.jadual.mahasiswa.listEvent.DataEvent;
+import informatika.machung.jadual.mahasiswa.listEvent.Event;
+import informatika.machung.jadual.mahasiswa.listEvent.ListEventAdapter;
 
 public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
 
@@ -24,9 +31,8 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
 
-    ImageView image;
-    TextView name;
-    TextView description;
+    private RecyclerView rvEvent;
+    private ArrayList<Event> arrEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,7 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
         setContentView(R.layout.activity_jadwal_mahasiswa);
 
         setupEnvirontment();
+        initializeEventList();
 
     }
 
@@ -52,6 +59,29 @@ public class JadwalDosenActivity_Mahasiswa extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    //--------------------------LIST----------------------------------
+
+    //initialize the list
+    private void initializeEventList(){
+        rvEvent = findViewById(R.id.rv_list_event);
+        rvEvent.setHasFixedSize(true);
+
+        arrEvent = new ArrayList<>();
+        arrEvent.addAll(DataEvent.getListData());
+
+        showRecyclerList();
+    }
+
+    //set Recyclerview data
+    private void showRecyclerList(){
+        rvEvent.setLayoutManager(new LinearLayoutManager(this));
+        ListEventAdapter listEventAdapter = new ListEventAdapter(this);
+        listEventAdapter.setListEvent(arrEvent);
+        rvEvent.setAdapter(listEventAdapter);
+    }
+
+    //--------------------------END.LIST----------------------------------
 
     private void setupActionBar(String name){
         // Set nama dosen as lable name
